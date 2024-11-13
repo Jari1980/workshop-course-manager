@@ -12,7 +12,7 @@ import java.util.HashSet;
 public class CourseManagerAssignmentApplication {
 
     public static void main(String[] args) {
-        //SpringApplication.run(CourseManagerAssignmentApplication.class, args);
+        SpringApplication.run(CourseManagerAssignmentApplication.class, args);
         Collection<Student> students = new HashSet<>();
         StudentCollectionRepository student = new StudentCollectionRepository(students);
 
