@@ -45,6 +45,13 @@ public class Course implements Serializable {
     public int getId() {
         return id;
     }
+    public int getWeekDuration() {
+        return weekDuration;
+    }
+
+    public void setWeekDuration(int weekDuration) {
+        this.weekDuration = weekDuration;
+    }
 
     public void setCourseName(String courseName) {
         this.courseName = courseName;

@@ -8,10 +8,14 @@ import se.lexicon.course_manager.data.service.converter.Converters;
 import se.lexicon.course_manager.dto.forms.CreateCourseForm;
 import se.lexicon.course_manager.dto.forms.UpdateCourseForm;
 import se.lexicon.course_manager.dto.views.CourseView;
+import se.lexicon.course_manager.model.Course;
 
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 // TODO provide proper implementation.
 @Service
@@ -30,21 +34,35 @@ public class CourseManager implements CourseService {
 
     @Override
     public CourseView create(CreateCourseForm form) {
-        return null;
+        Course course = courseDao.createCourse(form.getCourseName(), form.getStartDate(), form.getWeekDuration());
+        return converters.courseToCourseView(course);
     }
 
     @Override
     public CourseView update(UpdateCourseForm form) {
-        return null;
+        Course course = courseDao.findById(form.getId());
+        if(course == null){
+            return null;
+        }
+        course.setCourseName(form.getCourseName());
+        course.setStartDate(form.getStartDate());
+        course.setWeekDuration(form.getWeekDuration());
+        return converters.courseToCourseView(course);
     }
 
     @Override
-    public List<CourseView> searchByCourseName(String courseName) {
-        return null;
+    public List<CourseView> searchByCourseName(String courseName)
+    {
+        List<CourseView> result = new ArrayList<>();
+        for(Course element : courseDao.findAll()){
+            result.add(converters.courseToCourseView(element));
+        }
+        return result;
     }
 
     @Override
     public List<CourseView> searchByDateBefore(LocalDate end) {
+
         return null;
     }
 
