@@ -22,7 +22,9 @@ public class Course implements Serializable {
     }
 
     public Course(int id){
+
         this.id = id;
+        this.students = new HashSet<>();
     }
 
     public Course(int id, String courseName, LocalDate startDate, int weekDuration){
