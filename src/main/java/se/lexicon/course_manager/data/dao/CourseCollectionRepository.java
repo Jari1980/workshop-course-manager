@@ -76,6 +76,15 @@ public class CourseCollectionRepository implements CourseDao{
                 }
             }
         }
+        /*
+        Collection<Course> courses = new HashSet<>();
+        for(Course course : courses){
+            for(Student s : course.getStudents()){
+                if(s.getId() == studentId){
+                    courses.add(course);
+                }
+            }
+        }*/
         return result;
     }
 
