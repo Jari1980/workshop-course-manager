@@ -10,7 +10,6 @@ import javax.sound.midi.Sequencer;
 import java.util.Collection;
 import java.util.HashSet;
 
-// TODO provide proper implementation.
 
 public class StudentCollectionRepository implements StudentDao {
 

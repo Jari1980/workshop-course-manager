@@ -14,7 +14,7 @@ import se.lexicon.course_manager.model.Student;
 
 import java.util.List;
 
-// TODO provide proper implementation.
+
 @Service
 public class StudentManager implements StudentService {
 

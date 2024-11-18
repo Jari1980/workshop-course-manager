@@ -10,7 +10,11 @@ import se.lexicon.course_manager.data.dao.StudentCollectionRepository;
 import se.lexicon.course_manager.data.dao.StudentDao;
 import se.lexicon.course_manager.data.sequencers.StudentSequencer;
 import se.lexicon.course_manager.data.service.converter.ModelToDto;
+import se.lexicon.course_manager.model.Course;
+import se.lexicon.course_manager.model.Student;
 
+
+import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -29,11 +33,24 @@ public class StudentManagerTest {
         assertNotNull(studentDao);
     }
 
-    // TODO Write your tests here
+
 
     @AfterEach
     void tearDown() {
         StudentSequencer.setStudentSequencer(0);
         studentDao.clear();
+    }
+
+    @Test
+    void create() {
+        Student student = studentDao.createStudent("Test Test", "test@test.se", "TestAdress");
+        assertNotNull(student);
+    }
+
+    @Test
+    void findById() {
+        Student student = studentDao.createStudent("Test Test", "test@test.se", "TestAdress");
+        Student test = studentDao.findById(1);
+        assertNotNull(test);
     }
 }

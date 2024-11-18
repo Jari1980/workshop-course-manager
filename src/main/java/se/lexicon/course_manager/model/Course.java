@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-// TODO implement model
+
 public class Course implements Serializable {
     private int id;
     private String courseName;

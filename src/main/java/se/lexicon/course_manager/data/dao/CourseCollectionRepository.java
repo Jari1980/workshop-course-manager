@@ -13,7 +13,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
-// TODO provide proper implementation.
 
 public class CourseCollectionRepository implements CourseDao{
 

@@ -18,7 +18,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-// TODO provide proper implementation.
+
 @Service
 public class CourseManager implements CourseService {
 
